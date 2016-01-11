@@ -36,7 +36,7 @@ app.get('/git', function (req, res) {
           console.log('error: '+error);
           return res.status(500).send(error);
         } else {
-          return res.status(200).send();
+          return res.status(200).send('{ "status": "ok" }');
         }
       });
     });
@@ -49,7 +49,7 @@ app.get('/git', function (req, res) {
         console.log('error: '+error);
         return res.status(500).send(error);
       } else {
-        return res.status(200).send();
+        return res.status(200).send('{ "status": "ok" }');
       }
     });
   } else {
@@ -70,7 +70,7 @@ app.get('/node', function (req, res) {
         console.log('error: '+error);
         return res.status(500).send(error);
       } else {
-        return res.status(200).send();
+        return res.status(200).send('{ "status": "ok" }');
       }
     });
   } else if (action=="app_start") {
@@ -82,7 +82,7 @@ app.get('/node', function (req, res) {
         console.log('error: '+error);
         return res.status(500).send(error);
       } else {
-        return res.status(200).send();
+        return res.status(200).send('{ "status": "ok" }');
       }
     });
   } else if (action=="app_stop") {
@@ -94,7 +94,7 @@ app.get('/node', function (req, res) {
         console.log('error: '+error);
         return res.status(500).send(error);
       } else {
-        return res.status(200).send();
+        return res.status(200).send('{ "status": "ok" }');
       }
     });
   } else if (action=="app_restart") {
@@ -106,7 +106,7 @@ app.get('/node', function (req, res) {
         console.log('error: '+error);
         return res.status(500).send(error);
       } else {
-        return res.status(200).send();
+        return res.status(200).send('{ "status": "ok" }');
       }
     });
   } else {
@@ -144,7 +144,7 @@ app.get('/setup', function (req, res) {
                 console.log('error: '+error);
                 return res.status(500).send(error);
               } else {
-                return res.status(200).send();
+                return res.status(200).send('{ "status": "ok" }');
               }
             });
           }
@@ -158,5 +158,5 @@ var server = app.listen(8081, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Monit app listening at http://%s:%s', host, port);
 });
